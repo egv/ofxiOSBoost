@@ -29,10 +29,10 @@
 
 In Xcode Build Settings for your project:
 
-- Add to Library Search Paths: ``` $(SRCROOT)/../../../addons/ofxiOSBoost/libs/boost/lib/ios ```
+- Add to Library Search Paths: ``` $(SRCROOT)/../../../addons/ofxiOSBoost/libs/boost/ios ```
 - Add to Header Search Paths:  ```$(SRCROOT)/../../../addons/ofxiOSBoost/libs/boost/include ```
 
-If not openFrameworks just add the ``` libs/boost/include ``` to Header Search Paths and the  ``` libs/boost/lib/ios ``` to Library Search Paths
+If not openFrameworks just add the ``` libs/boost/include ``` to Header Search Paths and the  ``` libs/boost/ios ``` to Library Search Paths
 
 
 
