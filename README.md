@@ -29,10 +29,8 @@
 
 In Xcode Build Settings for your project:
 
-+- Add to Library Search Paths ( ```LIBRARY_SEARCH_PATHS``` ) 
--- Add to Header Search Paths:  ```$(SRCROOT)/../../../addons/ofxiOSBoost/libs/boost/include ``` 
-```$(SRCROOT)/../../../addons/ofxiOSBoost/libs/boost/lib/ios ```
-+- Add to Header Search Paths ( ```HEADER_SEARCH_PATHS``` )  
+- Add to Library Search Paths ( ```LIBRARY_SEARCH_PATHS``` ) ```$(SRCROOT)/../../../addons/ofxiOSBoost/libs/boost/lib/ios ```
+- Add to Header Search Paths ( ```HEADER_SEARCH_PATHS``` )  
 ```$(SRCROOT)/../../../addons/ofxiOSBoost/libs/boost/include ```
 
 In the Target under Build Phases
