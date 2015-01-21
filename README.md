@@ -29,8 +29,14 @@
 
 In Xcode Build Settings for your project:
 
-- Add to Library Search Paths: ``` $(SRCROOT)/../../../addons/ofxiOSBoost/libs/boost/ios ```
-- Add to Header Search Paths:  ```$(SRCROOT)/../../../addons/ofxiOSBoost/libs/boost/include ```
++- Add to Library Search Paths ( ```LIBRARY_SEARCH_PATHS``` ) 
+-- Add to Header Search Paths:  ```$(SRCROOT)/../../../addons/ofxiOSBoost/libs/boost/include ``` 
+```$(SRCROOT)/../../../addons/ofxiOSBoost/libs/boost/lib/ios ```
++- Add to Header Search Paths ( ```HEADER_SEARCH_PATHS``` )  
+```$(SRCROOT)/../../../addons/ofxiOSBoost/libs/boost/include ```
+
+In the Target under Build Phases
+- Add to 'Link Binary With Libraries' the ```boost.a``` found in the ```ofxiOSBoost/libs/boost/lib/ios``` directory.
 
 If not openFrameworks just add the ``` libs/boost/include ``` to Header Search Paths and the  ``` libs/boost/ios ``` to Library Search Paths
 
