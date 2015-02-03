@@ -54,7 +54,6 @@ Check Apple's Hardware sheet if you need to verify: [Apple's Device compatibilty
 
 ** Armv7s has been removed due to Apple phasing our the requirement from the STANDARD_ARCHITECTURES.
 
-
 ============
 
 ### How to Build?
@@ -89,4 +88,34 @@ See: http://www.boost.org/users/history/version_1_57_0.html
 
 
 ### Version 1.57.0 (Date): 24th November 2014
+
+
+
+### Troubleshooting:
+
+### Undefined symbols link error (For libc++ release)
+If you use libraries like `serialization` you might see link errors in Xcode 6 especially when the framework was built using `--with-c++11` flag.
+```
+    Undefined symbols for architecture i386:
+    "std::__1::__vector_base_common<true>::__throw_length_error() const", referenced from:
+    void std::__1::vector<boost::archive::detail::basic_iarchive_impl::cobject_id, std::__1::allocator<boost::archive::detail::basic_iarchive_impl::cobject_id> >::__push_back_slow_path<boost::archive::detail::basic_iarchive_impl::cobject_id>(boost::archive::detail::basic_iarchive_impl::cobject_id&&) in boost(libboost_serialization_basic_iarchive.o)
+```
+
+You have to change your project or target build settings.
+
+Under *Apple LLVM 6.0 - Language - C++* make the following changes
+
+```C++ Language Dialect``` to ```C++11 [-std=c++11]```
+```C++ Standard Library``` to ```libc++ (LLVM C++ standard library with C++11 support)```
+
+### Parse errors when including `boost/type_traits.hpp`
+If you happen to include `<boost/type_traits.hpp>` header file, you may see compile errors like this
+
+    Unexpected member name of ';' after declaration specifiers
+
+To fix this problem, include the following line in your porject `***-Prefix.pch` file.
+
+    #define __ASSERT_MACROS_DEFINE_VERSIONS_WITHOUT_UNDERSCORES 0
+
+
 
